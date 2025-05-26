@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Calculator{
+public class Calculator {
     int choice;
     Scanner sc = new Scanner(System.in);
 
@@ -59,7 +59,7 @@ public class Calculator{
             System.out.print("Enter second number: ");
             num2 = sc.nextDouble();
             if (num2 == 0) {
-                System.out.println("modulas by zero is not allowed bro");
+                System.out.println("Modulus by zero is not allowed.");
             } else {
                 System.out.println("Result: " + (num1 % num2));
             }
@@ -85,10 +85,10 @@ public class Calculator{
     }
 
     public static void main(String[] args) {
-        SciCalc calc = new SciCalc();
+        Calculator calc = new Calculator();  // <-- Changed SciCalc to Calculator
         do {
             calc.displayMenu();
-            calc.performOperation();
+            calc.Operation();  // <-- Also fixed method name (was performOperation)
         } while (calc.choice != 8);
     }
 }
