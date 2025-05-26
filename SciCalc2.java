@@ -18,77 +18,95 @@ public class Calculator {
         choice = sc.nextInt();
     }
 
-    void Operation() {
-        double num1, num2;
-
+    void performOperation() {
         if (choice == 1) {
-            System.out.print("Enter first number: ");
-            num1 = sc.nextDouble();
-            System.out.print("Enter second number: ");
-            num2 = sc.nextDouble();
-            System.out.println("Result: " + (num1 + num2));
-
+            add();
         } else if (choice == 2) {
-            System.out.print("Enter first number: ");
-            num1 = sc.nextDouble();
-            System.out.print("Enter second number: ");
-            num2 = sc.nextDouble();
-            System.out.println("Result: " + (num1 * num2));
-
+            multiply();
         } else if (choice == 3) {
-            System.out.print("Enter first number: ");
-            num1 = sc.nextDouble();
-            System.out.print("Enter second number: ");
-            num2 = sc.nextDouble();
-            System.out.println("Result: " + (num1 - num2));
-
+            subtract();
         } else if (choice == 4) {
-            System.out.print("Enter dividend: ");
-            num1 = sc.nextDouble();
-            System.out.print("Enter divisor: ");
-            num2 = sc.nextDouble();
-            if (num2 == 0) {
-                System.out.println("Error: Division by zero not allowed.");
-            } else {
-                System.out.println("Result: " + (num1 / num2));
-            }
-
+            divide();
         } else if (choice == 5) {
-            System.out.print("Enter first number: ");
-            num1 = sc.nextDouble();
-            System.out.print("Enter second number: ");
-            num2 = sc.nextDouble();
-            if (num2 == 0) {
-                System.out.println("Modulus by zero is not allowed.");
-            } else {
-                System.out.println("Result: " + (num1 % num2));
-            }
-
+            modulus();
         } else if (choice == 6) {
-            System.out.print("Enter radius: ");
-            double radius = sc.nextDouble();
-            System.out.println("Area of Circle: " + (Math.PI * radius * radius));
-
+            areaOfCircle();
         } else if (choice == 7) {
-            System.out.print("Enter length: ");
-            double length = sc.nextDouble();
-            System.out.print("Enter width: ");
-            double width = sc.nextDouble();
-            System.out.println("Area of Rectangle: " + (length * width));
-
+            areaOfRectangle();
         } else if (choice == 8) {
             System.out.println("Exiting the program.");
-
         } else {
             System.out.println("Invalid choice.");
         }
+    }
+
+    void add() {
+        System.out.print("Enter first number: ");
+        double num1 = sc.nextDouble();
+        System.out.print("Enter second number: ");
+        double num2 = sc.nextDouble();
+        System.out.println("Result: " + (num1 + num2));
+    }
+
+    void multiply() {
+        System.out.print("Enter first number: ");
+        double num1 = sc.nextDouble();
+        System.out.print("Enter second number: ");
+        double num2 = sc.nextDouble();
+        System.out.println("Result: " + (num1 * num2));
+    }
+
+    void subtract() {
+        System.out.print("Enter first number: ");
+        double num1 = sc.nextDouble();
+        System.out.print("Enter second number: ");
+        double num2 = sc.nextDouble();
+        System.out.println("Result: " + (num1 - num2));
+    }
+
+    void divide() {
+        System.out.print("Enter dividend: ");
+        double num1 = sc.nextDouble();
+        System.out.print("Enter divisor: ");
+        double num2 = sc.nextDouble();
+        if (num2 == 0) {
+            System.out.println("Error: Division by zero not allowed.");
+        } else {
+            System.out.println("Result: " + (num1 / num2));
+        }
+    }
+
+    void modulus() {
+        System.out.print("Enter first number: ");
+        double num1 = sc.nextDouble();
+        System.out.print("Enter second number: ");
+        double num2 = sc.nextDouble();
+        if (num2 == 0) {
+            System.out.println("Modulus by zero is not allowed.");
+        } else {
+            System.out.println("Result: " + (num1 % num2));
+        }
+    }
+
+    void areaOfCircle() {
+        System.out.print("Enter radius: ");
+        double radius = sc.nextDouble();
+        System.out.println("Area of Circle: " + (Math.PI * radius * radius));
+    }
+
+    void areaOfRectangle() {
+        System.out.print("Enter length: ");
+        double length = sc.nextDouble();
+        System.out.print("Enter width: ");
+        double width = sc.nextDouble();
+        System.out.println("Area of Rectangle: " + (length * width));
     }
 
     public static void main(String[] args) {
         Calculator calc = new Calculator();
         do {
             calc.displayMenu();
-            calc.Operation();
+            calc.performOperation();
         } while (calc.choice != 8);
     }
 }
