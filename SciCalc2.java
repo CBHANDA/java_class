@@ -85,10 +85,10 @@ public class Calculator {
     }
 
     public static void main(String[] args) {
-        Calculator calc = new Calculator();  // <-- Changed SciCalc to Calculator
+        Calculator calc = new Calculator();
         do {
             calc.displayMenu();
-            calc.Operation();  // <-- Also fixed method name (was performOperation)
+            calc.Operation();
         } while (calc.choice != 8);
     }
 }
